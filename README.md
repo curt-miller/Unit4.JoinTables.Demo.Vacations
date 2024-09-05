@@ -51,7 +51,7 @@ This activity guides you through building a simple CRUD API using Prisma and Exp
    - a vacation belongs to a user
    - a vacation belongs to a place
    - a user can have many vacations
-   - a place can be visited on vacation many times.
+   - a place can be visited on vacation many times
    ```js
    const prisma = require("../prisma");
    const seed = async () => {
