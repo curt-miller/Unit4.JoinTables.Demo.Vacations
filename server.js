@@ -45,7 +45,7 @@ app.post("/api/users/:id/vacations", async (req, res, next) => {
         travelDate,
       },
     });
-    res.json(vacation);
+    res.status(201).json(vacation);
   } catch (err) {
     next();
   }
