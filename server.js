@@ -12,7 +12,7 @@ app.get("/api/users", async (req, res, next) => {
     const users = await prisma.user.findMany();
     res.json(users);
   } catch (err) {
-    next(err);
+    next();
   }
 });
 
@@ -21,7 +21,7 @@ app.get("/api/places", async (req, res, next) => {
     const places = await prisma.place.findMany();
     res.json(places);
   } catch (err) {
-    next(err);
+    next();
   }
 });
 
@@ -30,7 +30,7 @@ app.get("/api/vacations", async (req, res, next) => {
     const vacations = await prisma.vacation.findMany();
     res.json(vacations);
   } catch (err) {
-    next(err);
+    next();
   }
 });
 
@@ -47,7 +47,7 @@ app.post("/api/users/:id/vacations", async (req, res, next) => {
     });
     res.json(vacation);
   } catch (err) {
-    next(err);
+    next();
   }
 });
 
@@ -68,7 +68,7 @@ app.delete("/api/users/:userId/vacations/:id", async (req, res, next) => {
     await prisma.vacation.delete({ where: { id } });
     res.sendStatus(204);
   } catch (err) {
-    next(err);
+    next();
   }
 });
 
